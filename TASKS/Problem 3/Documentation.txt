@@ -1,0 +1,79 @@
+```java
+import java.util.Scanner;
+
+/**
+ * A utility class to check whether a given integer is a prime number.
+ */
+public class PrimeChecker {
+
+    /**
+     * Checks if a given integer is a prime number.
+     *
+     * @param n The integer to be checked for primality.
+     * @return {@code true} if the number is prime, {@code false} otherwise.
+     */
+    public static boolean isPrime(int n) {
+        if (n <= 1) {
+            return false; // 1 and numbers less than or equal to 1 are not prime
+        }
+
+        if (n == 2) {
+            return true; // 2 is the only even prime number
+        }
+
+        if (n % 2 == 0) {
+            return false; // Other even numbers greater than 2 are not prime
+        }
+
+        // Check divisibility from 3 up to the square root of n
+        for (int i = 3; i <= Math.sqrt(n); i += 2) {
+            if (n % i == 0) {
+                return false; // n is divisible by i, hence not prime
+            }
+        }
+
+        return true; // n is prime if it's not divisible by any number up to its square root
+    }
+
+    /**
+     * Main method to demonstrate checking primality of a number entered by the user.
+     *
+     * @param args Command-line arguments (not used in this program).
+     */
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Prompt the user to enter the number to check for primality
+        System.out.print("Enter a number to check if it's prime: ");
+        int n = scanner.nextInt();
+
+        // Check if n is prime
+        if (isPrime(n)) {
+            System.out.println(n + " is a prime number.");
+        } else {
+            System.out.println(n + " is not a prime number.");
+        }
+
+        // Close the scanner to release system resources
+        scanner.close();
+    }
+}
+```
+
+**Documentation Breakdown:**
+
+- **Class**: `PrimeChecker`
+  - Description: A utility class to check whether a given integer is a prime number.
+
+- **Method**: `isPrime(int n)`
+  - Description: Checks if a given integer is a prime number.
+  - Parameters:
+    - `n` - The integer to be checked for primality.
+  - Returns: `true` if `n` is prime, `false` otherwise.
+
+- **Method**: `main(String[] args)`
+  - Description: Main method to demonstrate checking primality of a number entered by the user.
+  - Parameters:
+    - `args` - Command-line arguments (not used in this program).
+
+This documentation provides a clear overview of the `PrimeChecker` class, its purpose, and how to use the `isPrime` method to determine whether a given number is prime. It also explains the usage of the `main` method to interactively check the primality of a user-entered number using keyboard input. The comments within the code serve as inline documentation to explain the logic and flow of the program.

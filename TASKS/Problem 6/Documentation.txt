@@ -1,0 +1,66 @@
+import java.util.Scanner;
+
+/**
+ * The `Degree` class calculates the result of `a` raised to the power of `n` using a simple loop.
+ */
+public class Degree {
+
+    /**
+     * Calculates the result of `a` raised to the power of `n` using a loop.
+     *
+     * @param a The base value.
+     * @param n The exponent value.
+     * @return The result of `a` raised to the power of `n`.
+     */
+    public static int degreeCalculate(int a, int n) {
+        if (n == 0) {
+            return 1; // Any number raised to the power of 0 is 1
+        }
+
+        int result = 1;
+        for (int i = 0; i < n; i++) {
+            result *= a; // Multiply the result by `a` for `n` times
+        }
+
+        return result;
+    }
+
+    /**
+     * Main method to demonstrate exponentiation using a loop.
+     * Prompts the user to enter the base (a) and exponent (n) values and computes `a^n`.
+     *
+     * @param args The command-line arguments (not used in this program).
+     */
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Prompt the user to enter the base (a) and exponent (n) values
+        System.out.print("Enter the base (a): ");
+        int a = scanner.nextInt();
+        System.out.print("Enter the exponent (n): ");
+        int n = scanner.nextInt();
+
+        // Calculate `a` raised to the power of `n`
+        int result = degreeCalculate(a, n);
+
+        // Display the result
+        System.out.println(a + "^" + n + " = " + result);
+
+        // Close the scanner
+        scanner.close();
+    }
+}
+Documentation Explanation
+Class: Degree
+Description: The Degree class provides a method to calculate the result of a raised to the power of n using a simple loop.
+Method: degreeCalculate(int a, int n)
+Description: Calculates the result of a raised to the power of n using a loop.
+Parameters:
+a - The base value.
+n - The exponent value.
+Returns: The result of a raised to the power of n.
+Method: main(String[] args)
+Description: Main method to demonstrate exponentiation using a loop.
+Purpose: Prompts the user to enter the base (a) and exponent (n) values and calculates a^n.
+Parameters:
+args - The command-line arguments (not used in this program).

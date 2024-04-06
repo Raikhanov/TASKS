@@ -1,0 +1,61 @@
+import java.util.Scanner;
+
+public class ArrayReversal {
+
+    /**
+     * Reverses the given array in-place using a simple loop.
+     *
+     * @param arr The array to be reversed.
+     */
+    public static void reverseArray(int[] arr) {
+        int start = 0;
+        int end = arr.length - 1;
+
+        while (start < end) {
+            // Swap elements at start and end indices
+            int temp = arr[start];
+            arr[start] = arr[end];
+            arr[end] = temp;
+
+            // Move start index forward and end index backward
+            start++;
+            end--;
+        }
+    }
+
+    /**
+     * Main method to demonstrate array reversal using a simple loop.
+     *
+     * @param args The command-line arguments (not used in this program).
+     */
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Prompt the user to enter the number of elements
+        System.out.print("Enter the number of elements: ");
+        int n = scanner.nextInt();
+
+        // Create an array to store the elements
+        int[] arr = new int[n];
+
+        // Prompt the user to enter each element of the array
+        System.out.println("Enter the elements of the array:");
+        for (int i = 0; i < n; i++) {
+            System.out.print("Element " + (i + 1) + ": ");
+            arr[i] = scanner.nextInt();
+        }
+
+        // Reverse the array in-place using a simple loop
+        reverseArray(arr);
+
+        // Display the reversed array
+        System.out.println("Reversed array:");
+        for (int i = 0; i < n; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println(); // Move to the next line
+
+        // Close the scanner
+        scanner.close();
+    }
+}

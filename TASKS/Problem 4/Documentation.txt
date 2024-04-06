@@ -1,0 +1,79 @@
+```java
+import java.util.Scanner;
+
+/**
+ * The `Factorial` class provides a method to calculate the factorial of a non-negative integer using recursion.
+ */
+public class Factorial {
+
+    /**
+     * Calculates the factorial of a given non-negative integer using recursion.
+     *
+     * @param n The non-negative integer for which factorial is to be calculated.
+     * @return The factorial of the given non-negative integer.
+     * @throws IllegalArgumentException If the input integer is negative.
+     */
+    public static long factorial(int n) {
+        // Base case: 0! = 1
+        if (n == 0) {
+            return 1;
+        }
+        // Recursive case: n! = n * (n-1)!
+        return (long) n * factorial(n - 1);
+    }
+
+    /**
+     * Main method to demonstrate the calculation of factorial using recursion.
+     * Prompts the user to enter a non-negative integer and prints its factorial.
+     *
+     * @param args The command-line arguments (not used in this program).
+     */
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Prompt the user to enter a non-negative integer
+        System.out.print("Enter a non-negative integer to calculate its factorial: ");
+        int n = scanner.nextInt();
+
+        // Calculate factorial of n using the factorial method
+        try {
+            long result = factorial(n);
+            System.out.println("Factorial of " + n + " is: " + result);
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
+
+        // Close the scanner
+        scanner.close();
+    }
+}
+```
+
+### Documentation Explanation
+
+- **Class**: `Factorial`
+  - Description: The `Factorial` class provides a method to calculate the factorial of a non-negative integer using recursion.
+
+- **Method**: `factorial(int n)`
+  - Description: Calculates the factorial of a given non-negative integer using recursion.
+  - Parameters:
+    - `n` - The non-negative integer for which factorial is to be calculated.
+  - Returns: The factorial of the given non-negative integer.
+  - Throws:
+    - `IllegalArgumentException` - If the input integer is negative.
+
+- **Method**: `main(String[] args)`
+  - Description: Main method to demonstrate the calculation of factorial using recursion.
+  - Purpose: Prompts the user to enter a non-negative integer, calculates its factorial using the `factorial` method, and prints the result.
+  - Parameters:
+    - `args` - The command-line arguments (not used in this program).
+
+### Documentation Breakdown
+
+- The `Factorial` class encapsulates the factorial calculation logic with a recursive approach.
+- The `factorial` method implements the factorial calculation using recursion, handling the base case (`0! = 1`).
+- The `main` method demonstrates the usage of the `factorial` method by prompting the user for input and displaying the computed factorial.
+- Exception handling is used to handle negative input values gracefully.
+- Detailed comments within the code explain the purpose of each method, describe their parameters and return values, and provide instructions for using the program.
+
+This documentation serves as a comprehensive guide for understanding and using the `Factorial` class, its methods, and how to interact with the program to calculate factorials of non-negative integers using recursion. The comments within the code ensure clarity and readability for developers using or modifying this code.

@@ -1,0 +1,80 @@
+```java
+import java.util.Scanner;
+
+/**
+ * A class that contains a method to find the minimum element in an array of integers.
+ */
+public class MinimumElementFinder {
+
+    /**
+     * Finds the minimum element in the given array.
+     *
+     * @param n   The number of elements in the array.
+     * @param arr The array of integers containing the elements.
+     * @return The minimum element in the array. Returns {@link Integer#MIN_VALUE} if the array is empty.
+     */
+    public static int findMinimum(int n, int[] arr) {
+        if (n == 0) {
+            return Integer.MIN_VALUE; // Handle empty array case
+        }
+        int minElement = arr[0]; // Assume the first element is the minimum
+        for (int i = 1; i < n; i++) { // Iterate through the array starting from the second element
+            if (arr[i] < minElement) {
+                minElement = arr[i]; // Update the minimum if a smaller element is found
+            }
+        }
+        return minElement;
+    }
+
+    /**
+     * Main method to demonstrate finding the minimum element in an array based on user input.
+     *
+     * @param args Command-line arguments (not used in this program).
+     */
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Prompt user to enter the number of elements in the array
+        System.out.print("Enter the number of elements: ");
+        int n = scanner.nextInt();
+
+        // Create an array to store the elements
+        int[] arr = new int[n];
+
+        // Prompt user to enter each element of the array
+        System.out.println("Enter the elements of the array:");
+        for (int i = 0; i < n; i++) {
+            System.out.print("Element " + (i + 1) + ": ");
+            arr[i] = scanner.nextInt();
+        }
+
+        // Find the minimum element in the array
+        int minElement = findMinimum(n, arr);
+
+        // Display the minimum element
+        System.out.println("Minimum element: " + minElement);
+
+        // Close the scanner to release resources
+        scanner.close();
+    }
+}
+```
+
+**Documentation Breakdown:**
+
+- **Class**: `MinimumElementFinder`
+  - Description: A class that contains a method to find the minimum element in an array of integers.
+
+- **Method**: `findMinimum(int n, int[] arr)`
+  - Description: Finds the minimum element in the given array.
+  - Parameters:
+    - `n` - The number of elements in the array.
+    - `arr` - The array of integers containing the elements.
+  - Returns: The minimum element in the array. Returns `Integer.MIN_VALUE` if the array is empty.
+
+- **Method**: `main(String[] args)`
+  - Description: Main method to demonstrate finding the minimum element in an array based on user input.
+  - Parameters:
+    - `args` - Command-line arguments (not used in this program).
+
+This documentation provides a clear overview of the class, its methods, their purposes, parameters, return values, and how the main method can be used to interactively find the minimum element in an array of integers entered by the user via keyboard input.
